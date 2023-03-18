@@ -20,20 +20,19 @@ import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
 import * as $$$3 from "./sections/DesignSystem.story.tsx";
-import * as $$$4 from "./sections/Features.tsx";
-import * as $$$5 from "./sections/Footer.tsx";
-import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/ProductDetails.tsx";
-import * as $$$8 from "./sections/ProductGallery.tsx";
-import * as $$$9 from "./sections/ProductShelf.tsx";
-import * as $$$10 from "./sections/SearchControls.tsx";
-import * as $$$11 from "./sections/configBlackFriday.global.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$15 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$16 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$4 from "./sections/Footer.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/ProductDetails.tsx";
+import * as $$$7 from "./sections/ProductGallery.tsx";
+import * as $$$8 from "./sections/ProductShelf.tsx";
+import * as $$$9 from "./sections/SearchControls.tsx";
+import * as $$$10 from "./sections/configBlackFriday.global.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -74,20 +73,19 @@ const manifest: DecoManifest = {
     "./sections/Carousel.tsx": $$$1,
     "./sections/CookieConsent.tsx": $$$2,
     "./sections/DesignSystem.story.tsx": $$$3,
-    "./sections/Features.tsx": $$$4,
-    "./sections/Footer.tsx": $$$5,
-    "./sections/Header.tsx": $$$6,
-    "./sections/ProductDetails.tsx": $$$7,
-    "./sections/ProductGallery.tsx": $$$8,
-    "./sections/ProductShelf.tsx": $$$9,
-    "./sections/SearchControls.tsx": $$$10,
-    "./sections/configBlackFriday.global.tsx": $$$11,
-    "deco-sites/std/sections/SEO.tsx": $$$12,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$13,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$14,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$15,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$16,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$17,
+    "./sections/Footer.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/ProductDetails.tsx": $$$6,
+    "./sections/ProductGallery.tsx": $$$7,
+    "./sections/ProductShelf.tsx": $$$8,
+    "./sections/SearchControls.tsx": $$$9,
+    "./sections/configBlackFriday.global.tsx": $$$10,
+    "deco-sites/std/sections/SEO.tsx": $$$11,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -288,178 +286,6 @@ const manifest: DecoManifest = {
     },
     "./sections/DesignSystem.story.tsx": {
       "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/Features.tsx": {
-      "inputSchema": {
-        "title": " Features",
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "title": "Feature",
-              "type": "object",
-              "properties": {
-                "icon": {
-                  "type": "string",
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "ChevronLeft",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronRight",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronUp",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronDown",
-                    },
-                    {
-                      "type": "string",
-                      "const": "QuestionMarkCircle",
-                    },
-                    {
-                      "type": "string",
-                      "const": "User",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ShoppingCart",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Bars3",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Heart",
-                    },
-                    {
-                      "type": "string",
-                      "const": "MagnifyingGlass",
-                    },
-                    {
-                      "type": "string",
-                      "const": "XMark",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Plus",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Minus",
-                    },
-                    {
-                      "type": "string",
-                      "const": "MapPin",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Phone",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Visa",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Pix",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Logo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Facebook",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Instagram",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Tiktok",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Truck",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Discount",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Return",
-                    },
-                    {
-                      "type": "string",
-                      "const": "CreditCard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Deco",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Discord",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Trash",
-                    },
-                    {
-                      "type": "string",
-                      "const": "FilterList",
-                    },
-                    {
-                      "type": "string",
-                      "const": "WhatsApp",
-                    },
-                  ],
-                  "title": "Icon",
-                  "description": "Image src",
-                },
-                "title": {
-                  "type": "string",
-                  "title": "Title",
-                  "description": "Title",
-                },
-                "description": {
-                  "type": "string",
-                  "title": "Description",
-                  "description": "Description and Image alt text",
-                },
-              },
-              "required": [
-                "icon",
-                "title",
-                "description",
-              ],
-            },
-            "title": "Features",
-          },
-        },
-        "required": [
-          "features",
-        ],
-      },
       "outputSchema": null,
     },
     "./sections/Footer.tsx": {
