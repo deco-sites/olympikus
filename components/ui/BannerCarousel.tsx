@@ -18,12 +18,6 @@ export interface Banner {
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
-    /** @description Image text title */
-    title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
-    /** @description Button label */
-    label: string;
   };
 }
 
@@ -50,7 +44,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
   return (
     <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
+      <a href={action?.href ?? "#"}>
         <Picture class="w-full" preload={lcp}>
           <Source
             media="(max-width: 767px)"
@@ -73,20 +67,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             alt={alt}
           />
         </Picture>
-        {action && (
-          <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            <Text variant="heading-1" tone="default-inverse">
-              {action.title}
-            </Text>
-            <Text variant="heading-3" tone="default-inverse">
-              {action.subTitle}
-            </Text>
-            <Button variant="secondary">{action.label}</Button>
-          </div>
-        )}
       </a>
     </div>
   );
@@ -147,12 +127,11 @@ function Controls() {
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Button
           class="h-12 w-12"
-          variant="icon"
+          variant="tertiary"
           data-slide="prev"
           aria-label="Previous item"
         >
           <Icon
-            class="text-default-inverse"
             size={20}
             id="ChevronLeft"
             strokeWidth={3}
@@ -162,12 +141,11 @@ function Controls() {
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Button
           class="h-12 w-12"
-          variant="icon"
+          variant="tertiary"
           data-slide="next"
           aria-label="Next item"
         >
           <Icon
-            class="text-default-inverse"
             size={20}
             id="ChevronRight"
             strokeWidth={3}
@@ -193,8 +171,6 @@ function BannerCarousel({ images, preload, interval }: Props) {
       </Slider>
 
       <Controls />
-
-      <Dots images={images} interval={interval} />
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>
