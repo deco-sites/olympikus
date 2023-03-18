@@ -66,15 +66,25 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
+      <section class="h-full bg-default flex flex-col">
+        <header class="flex px-4 justify-between items-center py-4 border-b-1 border-default bg-badge text-default-inverse">
           <h1>
-            <Text variant="heading-2">{title}</Text>
+            <Text class="uppercase font-logo text-2xl" tone="default-inverse">
+              {title}
+            </Text>
           </h1>
+
           <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+            <Icon
+              id="XMark"
+              width={20}
+              height={20}
+              strokeWidth={2}
+              class="text-default-inverse"
+            />
           </Button>
         </header>
+
         <div class="overflow-y-auto h-full flex flex-col">
           {loading === "lazy" ? lazy.value && children : children}
         </div>
