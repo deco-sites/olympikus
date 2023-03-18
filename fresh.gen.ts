@@ -28,14 +28,13 @@ import * as $$$8 from "./sections/ProductDetails.tsx";
 import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/WhatsApp.tsx";
-import * as $$$13 from "./sections/configBlackFriday.global.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$12 from "./sections/configBlackFriday.global.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -84,14 +83,13 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$9,
     "./sections/ProductShelf.tsx": $$$10,
     "./sections/SearchControls.tsx": $$$11,
-    "./sections/WhatsApp.tsx": $$$12,
-    "./sections/configBlackFriday.global.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "./sections/configBlackFriday.global.tsx": $$$12,
+    "deco-sites/std/sections/SEO.tsx": $$$13,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -997,23 +995,6 @@ const manifest: DecoManifest = {
         "required": [
           "page",
         ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/WhatsApp.tsx": {
-      "inputSchema": {
-        "title": " Whats App",
-        "type": "object",
-        "properties": {
-          "phone": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "Phone",
-          },
-        },
-        "required": [],
       },
       "outputSchema": null,
     },
