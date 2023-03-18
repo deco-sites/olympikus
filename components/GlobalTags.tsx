@@ -81,15 +81,6 @@ function GlobalTags() {
       `,
         }}
       />
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.isDark = false;
-            document.documentElement.classList[window.isDark ? 'add' : 'remove']("dark");
-            `,
-        }}
-      />
     </Head>
   );
 }
