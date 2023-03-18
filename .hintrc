@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "apple-touch-icons": "off",
+    "axe/aria": "off",
+    "button-type": "off",
+    "manifest-file-extension": "off",
+    "compat-api/html": "off",
+    "no-inline-styles": "off",
+    "axe/forms": "off"
+  }
+}
