@@ -54,6 +54,16 @@ const options: Omit<Options, "selfURL"> = {
         "positive": "#63ff00",
         "critical": "#2735d4",
       },
+      placeholderColor: {
+        "default": "#161616",
+        "default-inverse": "#FFFFFF",
+        "subdued": "#66736C",
+        "subdued-inverse": "#C6C6C6",
+        "price": "#2735d4",
+        "section-title": "#161616",
+        "positive": "#63ff00",
+        "critical": "#2735d4",
+      },
       borderColor: {
         "default": "#D4DBD7",
         "default-inverse": "#FFFFFF",
