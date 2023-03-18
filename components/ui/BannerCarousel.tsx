@@ -1,4 +1,3 @@
-import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
@@ -10,9 +9,19 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
   /** @description desktop otimized image */
-  desktop: LiveImage;
+  desktop: {
+    image: LiveImage;
+    width: number;
+    height: number;
+  };
+
   /** @description mobile otimized image */
-  mobile: LiveImage;
+  mobile: {
+    image: LiveImage;
+    width: number;
+    height: number;
+  };
+
   /** @description Image's alt text */
   alt: string;
   action?: {
@@ -43,81 +52,32 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
+    <div class="relative min-w-[100vw] overflow-y-hidden">
       <a href={action?.href ?? "#"}>
         <Picture class="w-full" preload={lcp}>
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
-            src={mobile}
-            width={360}
-            height={600}
+            src={mobile.image}
+            width={mobile.width}
+            height={mobile.height}
           />
           <Source
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
-            src={desktop}
-            width={1440}
-            height={600}
+            src={desktop.image}
+            width={desktop.width}
+            height={desktop.height}
           />
           <img
             class="object-cover w-full sm:h-full"
             loading={lcp ? "eager" : "lazy"}
-            src={desktop}
+            src={desktop.image}
             alt={alt}
           />
         </Picture>
       </a>
     </div>
-  );
-}
-
-function Dots({ images, interval = 0 }: Props) {
-  return (
-    <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @property --dot-progress {
-            syntax: '<percentage>';
-            inherits: false;
-            initial-value: 0%;
-          }`,
-        }}
-      >
-      </style>
-      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
-        {images?.map((_, index) => (
-          <li class="h-full">
-            <button
-              data-dot={index}
-              aria-label={`go to slider item ${index}`}
-              class="h-full rounded focus:outline-none group"
-            >
-              <div
-                class={tw`group-disabled:${
-                  animation(
-                    `${interval}s ease-out 1 forwards`,
-                    keyframes`
-                      from: {
-                        --dot-progress: 0%;
-                      }
-                      to {
-                        --dot-progress: 100%;
-                      }
-                    `,
-                  )
-                } w-16 sm:w-20 h-0.5`}
-                style={{
-                  background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-                }}
-              />
-            </button>
-          </li>
-        ))}
-      </ol>
-    </>
   );
 }
 
