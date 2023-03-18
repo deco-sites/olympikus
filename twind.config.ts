@@ -51,7 +51,7 @@ const options: Omit<Options, "selfURL"> = {
         "subdued-inverse": "#C6C6C6",
         "price": "#2735d4",
         "section-title": "#161616",
-        "positive": "#1A7346",
+        "positive": "#63ff00",
         "critical": "#2735d4",
       },
       borderColor: {
@@ -59,7 +59,7 @@ const options: Omit<Options, "selfURL"> = {
         "default-inverse": "#FFFFFF",
         "interactive": "#161616",
         "focus": "#3379EF",
-        "positive": "#1A7346",
+        "positive": "#63ff00",
         "critical": "#2735d4",
       },
       outline: {
