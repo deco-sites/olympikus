@@ -13,7 +13,7 @@ import * as $4 from "./routes/index.tsx";
 import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
-import * as $$3 from "./islands/HeaderSearchMenu.tsx";
+import * as $$3 from "./islands/HeaderSearch.tsx";
 import * as $$4 from "./islands/SearchControls.tsx";
 import * as $$5 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
@@ -29,12 +29,13 @@ import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/SearchControls.tsx";
 import * as $$$12 from "./sections/WhatsApp.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$13 from "./sections/configBlackFriday.global.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -66,7 +67,7 @@ const manifest: DecoManifest = {
     "./islands/AddToCartButton.tsx": $$0,
     "./islands/HeaderButton.tsx": $$1,
     "./islands/HeaderModals.tsx": $$2,
-    "./islands/HeaderSearchMenu.tsx": $$3,
+    "./islands/HeaderSearch.tsx": $$3,
     "./islands/SearchControls.tsx": $$4,
     "./islands/SliderJS.tsx": $$5,
   },
@@ -84,12 +85,13 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$10,
     "./sections/SearchControls.tsx": $$$11,
     "./sections/WhatsApp.tsx": $$$12,
-    "deco-sites/std/sections/SEO.tsx": $$$13,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
+    "./sections/configBlackFriday.global.tsx": $$$13,
+    "deco-sites/std/sections/SEO.tsx": $$$14,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -736,30 +738,62 @@ const manifest: DecoManifest = {
           "navItems": {
             "type": "array",
             "items": {
-              "title": "NavItem",
+              "title": "INavItem",
               "type": "object",
               "properties": {
-                "label": {
-                  "type": "string",
-                  "title": "Label",
-                },
                 "href": {
                   "type": "string",
                   "title": "Href",
                 },
-                "children": {
-                  "title": "Children",
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+                "color": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "default",
+                    },
+                    {
+                      "type": "string",
+                      "const": "positive",
+                    },
+                    {
+                      "type": "string",
+                      "const": "critical",
+                    },
+                  ],
+                  "title": "Color",
+                },
+                "subcategories": {
+                  "title": "Subcategories",
                   "type": "array",
                   "items": {
                     "type": "object",
                     "properties": {
-                      "label": {
+                      "title": {
                         "type": "string",
-                        "title": "Label",
+                        "title": "Title",
                       },
-                      "href": {
+                      "color": {
                         "type": "string",
-                        "title": "Href",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "default",
+                          },
+                          {
+                            "type": "string",
+                            "const": "positive",
+                          },
+                          {
+                            "type": "string",
+                            "const": "critical",
+                          },
+                        ],
+                        "title": "Color",
                       },
                       "children": {
                         "title": "Children",
@@ -767,51 +801,54 @@ const manifest: DecoManifest = {
                         "items": {
                           "type": "object",
                           "properties": {
-                            "label": {
-                              "type": "string",
-                              "title": "Label",
-                            },
                             "href": {
                               "type": "string",
                               "title": "Href",
                             },
+                            "label": {
+                              "type": "string",
+                              "title": "Label",
+                            },
+                            "color": {
+                              "type": "string",
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "const": "default",
+                                },
+                                {
+                                  "type": "string",
+                                  "const": "positive",
+                                },
+                                {
+                                  "type": "string",
+                                  "const": "critical",
+                                },
+                              ],
+                              "title": "Color",
+                            },
                           },
                           "required": [
-                            "label",
                             "href",
+                            "label",
+                            "color",
                           ],
                         },
                       },
                     },
                     "required": [
-                      "label",
-                      "href",
+                      "title",
+                      "color",
+                      "children",
                     ],
                   },
                 },
-                "image": {
-                  "title": "Image",
-                  "type": "object",
-                  "properties": {
-                    "src": {
-                      "format": "image-uri",
-                      "type": "string",
-                      "title": "Src",
-                    },
-                    "alt": {
-                      "type": [
-                        "string",
-                        "null",
-                      ],
-                      "title": "Alt",
-                    },
-                  },
-                  "required": [],
-                },
               },
               "required": [
-                "label",
                 "href",
+                "label",
+                "color",
+                "subcategories",
               ],
             },
             "title": "Navigation items",
@@ -992,6 +1029,22 @@ const manifest: DecoManifest = {
           },
         },
         "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/configBlackFriday.global.tsx": {
+      "inputSchema": {
+        "title": "Config Black Friday.global",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled",
+          },
+        },
+        "required": [
+          "enabled",
+        ],
       },
       "outputSchema": null,
     },
