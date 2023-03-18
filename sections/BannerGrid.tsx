@@ -1,10 +1,21 @@
+import Button from "$store/components/ui/Button.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
-  srcMobile: LiveImage;
-  srcDesktop?: LiveImage;
+  mobile: {
+    image: LiveImage;
+    width: number;
+    height: number;
+  };
+
+  desktop: {
+    image: LiveImage;
+    width: number;
+    height: number;
+  };
+
   /**
    * @description Image alt text
    */
@@ -13,10 +24,15 @@ export interface Banner {
    * @description When you click you go to
    */
   href: string;
+  /**
+   * @description A button to be added if it's necessary
+   */
+  action?: string;
 }
 
 export interface Props {
-  title?: string;
+  containerClasses?: string;
+
   /**
    * @description Default is 2 for mobile and all for desktop
    */
@@ -35,24 +51,14 @@ export interface Props {
 }
 
 export default function BannnerGrid({
-  title,
+  containerClasses,
   itemsPerLine,
   borderRadius,
   banners = [],
 }: Props) {
   return (
-    <Container>
+    <Container class={containerClasses}>
       <section class="w-full px-4 md:px-0 mx-auto">
-        {title &&
-          (
-            <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
-              <h2 class={"text-lg leading-5 font-semibold uppercase "}>
-                {title}
-              </h2>
-
-              <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
-            </div>
-          )}
         <div
           class={`grid gap-4 md:gap-6 grid-cols-${
             itemsPerLine && itemsPerLine.mobile ? itemsPerLine.mobile : "2"
@@ -62,40 +68,48 @@ export default function BannnerGrid({
               : banners.length
           }`}
         >
-          {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
-            <a
-              href={href}
-              class={`overflow-hidden ${
-                borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
-              } ${
-                borderRadius?.desktop
-                  ? `sm:rounded-[${borderRadius.desktop}px]`
-                  : `sm:rounded-none`
-              }`}
-            >
-              <Picture>
-                <Source
-                  media="(max-width: 767px)"
-                  src={srcMobile}
-                  width={100}
-                  height={100}
-                />
-                <Source
-                  media="(min-width: 768px)"
-                  src={srcDesktop ? srcDesktop : srcMobile}
-                  width={250}
-                  height={250}
-                />
-                <img
-                  class="w-full"
-                  sizes="(max-width: 640px) 100vw, 30vw"
-                  src={srcMobile}
-                  alt={alt}
-                  decoding="async"
-                  loading="lazy"
-                />
-              </Picture>
-            </a>
+          {banners.map(({ href, mobile, desktop, alt, action }) => (
+            <div class="flex flex-col items-center">
+              <a
+                href={href}
+                class={`overflow-hidden ${
+                  borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
+                } ${
+                  borderRadius?.desktop
+                    ? `sm:rounded-[${borderRadius.desktop}px]`
+                    : `sm:rounded-none`
+                }`}
+              >
+                <Picture>
+                  <Source
+                    media="(max-width: 767px)"
+                    src={mobile.image}
+                    width={mobile.width}
+                    height={mobile.height}
+                  />
+                  <Source
+                    media="(min-width: 768px)"
+                    src={desktop.image}
+                    width={desktop.width}
+                    height={desktop.height}
+                  />
+                  <img
+                    class="w-full"
+                    sizes="(max-width: 640px) 100vw, 30vw"
+                    src={mobile.image}
+                    alt={alt}
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </Picture>
+              </a>
+
+              {action && (
+                <Button as="a" href={href} variant="primary" class="mt-4">
+                  {action}
+                </Button>
+              )}
+            </div>
           ))}
         </div>
       </section>
