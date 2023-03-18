@@ -5,9 +5,9 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { useId } from "preact/hooks";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import * as uuid from "https://deno.land/std@0.175.0/uuid/mod.ts";
 
 export interface Props {
   title: string;
@@ -19,7 +19,7 @@ function ProductShelf({
   title,
   products,
 }: Props) {
-  const id = useId();
+  const id = uuid.v1.generate().toString();
 
   if (!products || products.length === 0) {
     return null;
