@@ -31,12 +31,13 @@ const gridRows = ([arg]: string[]) => {
 };
 
 const options: Omit<Options, "selfURL"> = {
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
-        "badge": "#8C3D3D", // shopping cart tem isso tambem
+        "badge": "#2735d4", // shopping cart tem isso tambem
         "footer": "#003232",
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
@@ -48,10 +49,10 @@ const options: Omit<Options, "selfURL"> = {
         "default-inverse": "#FFFFFF",
         "subdued": "#66736C",
         "subdued-inverse": "#C6C6C6",
-        "price": "#8C3D3D",
+        "price": "#2735d4",
         "section-title": "#161616",
         "positive": "#1A7346",
-        "critical": "#B44125",
+        "critical": "#2735d4",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -59,7 +60,7 @@ const options: Omit<Options, "selfURL"> = {
         "interactive": "#161616",
         "focus": "#3379EF",
         "positive": "#1A7346",
-        "critical": "#B44125",
+        "critical": "#2735d4",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
