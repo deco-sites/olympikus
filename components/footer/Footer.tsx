@@ -32,7 +32,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
       <div class="dark:bg-default-bf dark:text-white bg-gray-200 flex flex-col items-center justify-center">
         <div class="flex flex-col lg:flex-row lg:gap-20 gap-0 content-between w-full max-w-[1408px]">
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm mb-4">
+            <h1 class="text-badge font-extrabold text-sm mb-4">
               INSTITUCIONAL
             </h1>
             <ul>
@@ -47,7 +47,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm mb-4">AJUDA</h1>
+            <h1 class="text-badge font-extrabold text-sm mb-4">AJUDA</h1>
             <ul>
               {help.children.map((item) => (
                 <li key={item.label}>
@@ -60,31 +60,33 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm mb-4">
+            <h1 class="text-badge font-extrabold text-sm mb-4">
               SOBRE A LOJA ONLINE
             </h1>
             <ul>
               <li>
-                <p class="font-bold text-sm inline-flex tracking-wider">
+                <p class="font-bold text-sm inline-flex tracking-wider mr-2">
                   Telefone:
                 </p>
                 {about.phone}
               </li>
               <li>
-                <p class="font-bold text-sm inline-flex tracking-wider">
+                <p class="font-bold text-sm inline-flex tracking-wider mr-2">
                   Email:
                 </p>
                 {about.email}
               </li>
               <br />
-              <li class="font-bold">Horário de Funcionamento</li>
+              <li class="font-bold text-sm inline-flex tracking-wider">
+                Horário de Funcionamento
+              </li>
               <li>{about.openingHoursLine1}</li>
               <li>{about.openingHoursLine2}</li>
             </ul>
           </div>
 
           <div class="flex flex-col lg:m-3 m-4">
-            <h1 class="text-blue-700 font-extrabold mt-5 text-sm">PAGUE COM</h1>
+            <h1 class="text-badge font-extrabold mt-5 text-sm">PAGUE COM</h1>
             <div class="flex flex-row gap-4 mt-2">
               <Icon
                 id={"Elo"}

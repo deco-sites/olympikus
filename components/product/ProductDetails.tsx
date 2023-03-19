@@ -63,7 +63,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
       <div class="flex flex-col lg:flex-row mt-4 items-start">
         {/* Product Info */}
         <div class="flex flex-1 flex-col lg:max-w-[350px] w-full mb-12 lg:mb-0">
-          <h1 class="font-logo text-4xl text-critical uppercase">
+          <h1 class="font-logo text-4xl text-critical dark:text-white uppercase">
             {name}
           </h1>
 
@@ -71,18 +71,20 @@ function Details({ page }: { page: ProductDetailsPage }) {
             Ref.: {gtin}
           </Text>
 
-          <p class={`relative block mt-2 font-bold text-sm ${desc}`}>
+          <p
+            class={`relative block mt-2 font-bold text-sm ${desc} text-default dark:text-gray-400`}
+          >
             {description}
 
             {isDescTruncated.value && (
-              <span class="absolute bottom-0 block w-full h-[40px] bg-gradient-to-t from-white to-transparent" />
+              <span class="absolute bottom-0 block w-full h-[40px] bg-gradient-to-t from-white to-transparent dark:from-black" />
             )}
           </p>
 
           {isDescTruncated.value && (
             <p
               onClick={showDescription}
-              class="block mt-2 font-bold text-sm cursor-pointer underline"
+              class="block mt-2 font-bold text-sm cursor-pointer underline text-default dark:text-gray-400"
             >
               Ver mais
             </p>
@@ -96,7 +98,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
             class="flex flex-1 flex-col items-center justify-center relative lg:ml-12 md:mr-12 mb-12 md:mb-0"
           >
             {discount > 0 && (
-              <span class="absolute z-10 bg-interactive text-default-inverse uppercase font-logo py-1 px-3 top-0 left-0">
+              <span class="absolute z-10 bg-gray-500 text-black uppercase font-logo py-1 px-3 top-0 left-0">
                 {discount}% OFF
               </span>
             )}
@@ -128,7 +130,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
                   <button
                     data-dot={index}
                     aria-label={`go to slider item ${index}`}
-                    class="h-full rounded focus:outline-none group border-1 border-gray-100 p-1 disabled:border-critical"
+                    class="h-full rounded focus:outline-none group border-1 border-gray-100 dark:border-transparent p-1 disabled:border-critical dark:disabled:border-white"
                   >
                     <Image
                       width={60}
@@ -152,12 +154,12 @@ function Details({ page }: { page: ProductDetailsPage }) {
           {/* Prices */}
           <div class="flex flex-col lg:max-w-[350px] flex-1 w-full">
             {discount > 0 && (
-              <p class="line-through text-lg text-default">
+              <p class="line-through text-lg text-default dark:text-gray-400">
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p>
             )}
 
-            <p class="text-6xl text-default font-logo uppercase">
+            <p class="text-6xl text-default font-logo uppercase dark:text-white">
               {formatPrice(price, offers!.priceCurrency!)}
             </p>
 
@@ -183,8 +185,8 @@ function Details({ page }: { page: ProductDetailsPage }) {
             </div>
 
             {/* Qty */}
-            <div class="mt-12 max-w-min flex flex-row gap-1 items-center justify-center">
-              <span class="font-logo uppercase text-base tracking-widest	">
+            <div class="mt-12 max-w-min flex flex-col gap-2">
+              <span class="font-logo uppercase text-base tracking-widest text-default dark:text-gray-400">
                 Quantidade:
               </span>
 
@@ -192,7 +194,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
             </div>
 
             {/* Add to Cart */}
-            <div class="mt-2">
+            <div class="mt-3">
               {seller && (
                 <AddToCartButton
                   skuId={productID}

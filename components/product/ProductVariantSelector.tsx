@@ -14,7 +14,7 @@ function VariantSelector({ product }: Props) {
   return (
     <ul class="flex flex-col gap-4">
       <li class="flex flex-col gap-2">
-        <span class="font-logo uppercase text-lg tracking-widest	">
+        <span class="font-logo uppercase text-lg tracking-widest text-default dark:text-white">
           3 cores disponíveis
         </span>
 
@@ -40,7 +40,7 @@ function VariantSelector({ product }: Props) {
       </li>
 
       <li class="flex flex-col gap-2">
-        <span class="font-logo uppercase text-lg tracking-widest	">
+        <span class="font-logo uppercase text-lg tracking-widest text-default dark:text-white">
           Tamanho
         </span>
 

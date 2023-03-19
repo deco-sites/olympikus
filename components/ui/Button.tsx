@@ -14,7 +14,7 @@ export type Props =
 
 const variants = {
   primary:
-    "p-4 rounded bg-badge dark:bg-white font-button text-default-inverse dark:text-critical focus:outline-none text-xs uppercase",
+    "p-4 rounded bg-badge dark:bg-transparent font-button text-default-inverse dark:text-white dark:border-white dark:border-2 focus:outline-none text-xs uppercase",
   secondary:
     "p-4 rounded bg-transparent font-button text-critical dark:text-white focus:outline-none text-xs uppercase border-critical dark:border-white border-2",
   tertiary:
