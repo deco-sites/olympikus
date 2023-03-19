@@ -36,7 +36,7 @@ export default function HeaderSearch({ searchbar }: Props) {
             {searchbar.suggestions.searches.map((search, i) => {
               return (
                 <li>
-                  <a href={`/s=${search.term}`} class="flex flex-row text-sm">
+                  <a href={`/s?q=${search.term}`} class="flex flex-row text-sm">
                     <span class="w-[24px] h-[24px] bg-gray-300 text-xs flex items-center justify-center mr-3">
                       {i + 1}
                     </span>
