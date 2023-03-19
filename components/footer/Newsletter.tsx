@@ -7,7 +7,7 @@ function Newsletter() {
         <Text
           variant="heading-2"
           tone="default-inverse"
-          class="text-gray-600 font-extrabold"
+          class="text-gray-600 font-extrabold dark:text-white"
         >
           NEWSLETTER
         </Text>
@@ -16,7 +16,7 @@ function Newsletter() {
         <Text
           variant="heading-3"
           tone="default-inverse"
-          class="text-gray-600 text-left"
+          class="text-gray-600 text-left dark:text-gray-200"
           style="font-size: 0.75rem"
         >
           Inscreva-se em nossa newsletter para receber ofertas e novidades

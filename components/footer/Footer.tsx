@@ -25,14 +25,16 @@ export interface Props {
 function Footer({ institutional, help, about, copyright }: Props) {
   return (
     <footer class="w-full flex flex-col divide-y-1 divide-default">
-      <div class="bg-gray-300 dark:bg-default-bf dark:text-white flex flex-col justify-items-center">
+      <div class="bg-gray-300 dark:bg-gray-900 dark:text-white flex flex-col justify-items-center">
         <Newsletter />
       </div>
 
       <div class="dark:bg-default-bf dark:text-white bg-gray-200 flex flex-col items-center justify-center">
         <div class="flex flex-col lg:flex-row lg:gap-20 gap-0 content-between w-full max-w-[1408px]">
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm">INSTITUCIONAL</h1>
+            <h1 class="text-blue-700 font-extrabold text-sm mb-4">
+              INSTITUCIONAL
+            </h1>
             <ul>
               {institutional.children.map((item) => (
                 <li key={item.label}>
@@ -45,7 +47,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm">AJUDA</h1>
+            <h1 class="text-blue-700 font-extrabold text-sm mb-4">AJUDA</h1>
             <ul>
               {help.children.map((item) => (
                 <li key={item.label}>
@@ -58,7 +60,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-blue-700 font-extrabold text-sm">
+            <h1 class="text-blue-700 font-extrabold text-sm mb-4">
               SOBRE A LOJA ONLINE
             </h1>
             <ul>
@@ -83,7 +85,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
 
           <div class="flex flex-col lg:m-3 m-4">
             <h1 class="text-blue-700 font-extrabold mt-5 text-sm">PAGUE COM</h1>
-            <div class="flex flex-row gap-4">
+            <div class="flex flex-row gap-4 mt-2">
               <Icon
                 id={"Elo"}
                 width={30}
@@ -112,9 +114,9 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
         </div>
 
-        <div class="py-12 bg-gray-100 dark:bg-default-bf flex flex-col items-center justify-center w-full p-3">
-          <div class="bg-gray-100 flex dark:bg-default-bf flex-col items-center justify-center w-full max-w-[1408px] gap-1">
-            <ul class="text-center text-sm text-gray-400">
+        <div class="hidden md:flex py-12 bg-gray-100 dark:bg-default-bf flex-col items-center justify-center w-full p-3">
+          <div class="flex flex-col items-center justify-center w-full max-w-[1408px] gap-1">
+            <ul class="text-center text-xs text-gray-400">
               <li>{copyright.line1}</li>
               <li>{copyright.line2}</li>
               <li>{copyright.line3}</li>

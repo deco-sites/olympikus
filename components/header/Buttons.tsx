@@ -57,7 +57,6 @@ function CartButton() {
       variant="icon"
       class="relative"
       aria-label="open cart"
-      disabled={loading.value}
       onClick={() => {
         displayCart.value = true;
       }}
