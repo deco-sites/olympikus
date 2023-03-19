@@ -36,25 +36,26 @@ import * as $$$14 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as $$$15 from "deco-sites/std/sections/configOCC.global.tsx";
 import * as $$$16 from "deco-sites/std/sections/configShopify.global.tsx";
 import * as $$$17 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$$0 from "./functions/vtexSuggestionsMock.ts";
-import * as $$$$1 from "$live/functions/EffectSelectPage.ts";
-import * as $$$$2 from "$live/functions/MatchDate.ts";
-import * as $$$$3 from "$live/functions/MatchEnvironment.ts";
-import * as $$$$4 from "$live/functions/MatchRandom.ts";
-import * as $$$$5 from "$live/functions/MatchSite.ts";
-import * as $$$$6 from "$live/functions/MatchUserAgent.ts";
-import * as $$$$7 from "deco-sites/std/functions/occProductDetailsPage.ts";
-import * as $$$$8 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
-import * as $$$$9 from "deco-sites/std/functions/shopifyProductList.ts";
-import * as $$$$10 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as $$$$11 from "deco-sites/std/functions/vtexConfig.ts";
-import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$17 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$18 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$$0 from "./functions/vtexLegacyCustomProductDetails.ts";
+import * as $$$$1 from "./functions/vtexSuggestionsMock.ts";
+import * as $$$$2 from "$live/functions/EffectSelectPage.ts";
+import * as $$$$3 from "$live/functions/MatchDate.ts";
+import * as $$$$4 from "$live/functions/MatchEnvironment.ts";
+import * as $$$$5 from "$live/functions/MatchRandom.ts";
+import * as $$$$6 from "$live/functions/MatchSite.ts";
+import * as $$$$7 from "$live/functions/MatchUserAgent.ts";
+import * as $$$$8 from "deco-sites/std/functions/occProductDetailsPage.ts";
+import * as $$$$9 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as $$$$10 from "deco-sites/std/functions/shopifyProductList.ts";
+import * as $$$$11 from "deco-sites/std/functions/shopifyProductListingPage.ts";
+import * as $$$$12 from "deco-sites/std/functions/vtexConfig.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$18 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$19 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -95,25 +96,26 @@ const manifest: DecoManifest = {
     "deco-sites/std/sections/configVTEX.global.tsx": $$$17,
   },
   functions: {
-    "./functions/vtexSuggestionsMock.ts": $$$$0,
-    "$live/functions/EffectSelectPage.ts": $$$$1,
-    "$live/functions/MatchDate.ts": $$$$2,
-    "$live/functions/MatchEnvironment.ts": $$$$3,
-    "$live/functions/MatchRandom.ts": $$$$4,
-    "$live/functions/MatchSite.ts": $$$$5,
-    "$live/functions/MatchUserAgent.ts": $$$$6,
-    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$7,
-    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$8,
-    "deco-sites/std/functions/shopifyProductList.ts": $$$$9,
-    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$10,
-    "deco-sites/std/functions/vtexConfig.ts": $$$$11,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$12,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$13,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$15,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$16,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$17,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$18,
+    "./functions/vtexLegacyCustomProductDetails.ts": $$$$0,
+    "./functions/vtexSuggestionsMock.ts": $$$$1,
+    "$live/functions/EffectSelectPage.ts": $$$$2,
+    "$live/functions/MatchDate.ts": $$$$3,
+    "$live/functions/MatchEnvironment.ts": $$$$4,
+    "$live/functions/MatchRandom.ts": $$$$5,
+    "$live/functions/MatchSite.ts": $$$$6,
+    "$live/functions/MatchUserAgent.ts": $$$$7,
+    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$8,
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$9,
+    "deco-sites/std/functions/shopifyProductList.ts": $$$$10,
+    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$11,
+    "deco-sites/std/functions/vtexConfig.ts": $$$$12,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$13,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$14,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$15,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$16,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$17,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$18,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$19,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -816,6 +818,21 @@ const manifest: DecoManifest = {
         ],
       },
       "outputSchema": null,
+    },
+    "./functions/vtexLegacyCustomProductDetails.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Legacy Custom Product Details",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+          },
+        },
+        "additionalProperties": true,
+      },
     },
     "./functions/vtexSuggestionsMock.ts": {
       "inputSchema": {
