@@ -24,9 +24,9 @@ function NavItem({ item }: { item: INavItem }) {
 
   return (
     <li class="group flex items-center">
-      <a href={href} class="px-4 py-3">
+      <a href={href} class="px-3 py-3">
         <Text
-          class="font-logo uppercase text-2xl"
+          class="font-logo uppercase text-2xl border-b-4 border-transparent hover:border-badge pb-0.5"
           tone={item.color}
         >
           {label}

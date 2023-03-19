@@ -47,11 +47,11 @@ function Navbar({ items, searchbar }: {
       {/* Desktop Version */}
       <div class="hidden lg:flex justify-center border-b-1 border-default w-full pl-2 pr-3">
         <div class="flex flex-1 flex-row justify-between items-center max-w-[1408px]">
-          <div class="flex-none w-44">
+          <div class="flex-none">
             <a
               href="/"
               aria-label="Store logo"
-              class="block px-4 py-3 w-[160px]"
+              class="block px-4 py-3"
             >
               <Icon id="Logo" width={175} height={19.5} />
             </a>
@@ -59,7 +59,7 @@ function Navbar({ items, searchbar }: {
           <div class="flex-auto flex justify-center">
             {items.map((item) => <NavItem item={item} />)}
           </div>
-          <div class="flex-none w-44 flex items-center justify-end gap-2">
+          <div class="flex-none flex items-center justify-end gap-2">
             <HeaderSearch searchbar={searchbar} />
 
             <Button variant="icon">
