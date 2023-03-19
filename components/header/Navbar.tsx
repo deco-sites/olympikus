@@ -23,14 +23,19 @@ function Navbar({ items, searchbar }: {
             class={`flex-grow inline-flex items-center justify-center min-h-[${navbarHeight}]`}
             aria-label="Store logo"
           >
-            <Icon id="Logo" width={175} height={19.5} />
+            <Icon
+              id="Logo"
+              class="text-critical dark:text-white"
+              width={175}
+              height={19.5}
+            />
           </a>
 
           <div class="flex gap-1">
             <Button variant="icon">
               <Icon
                 id="Heart"
-                class="text-critical"
+                class="text-critical dark:text-white"
                 width={20}
                 height={20}
                 strokeWidth={2}
@@ -53,7 +58,12 @@ function Navbar({ items, searchbar }: {
               aria-label="Store logo"
               class="block px-4 py-3"
             >
-              <Icon id="Logo" width={175} height={19.5} />
+              <Icon
+                id="Logo"
+                width={175}
+                height={19.5}
+                class="text-critical dark:text-white"
+              />
             </a>
           </div>
           <div class="flex-auto flex justify-center">
@@ -65,7 +75,7 @@ function Navbar({ items, searchbar }: {
             <Button variant="icon">
               <Icon
                 id="User"
-                class="text-critical"
+                class="text-critical dark:text-white"
                 width={20}
                 height={20}
                 strokeWidth={0.4}
@@ -75,7 +85,7 @@ function Navbar({ items, searchbar }: {
             <Button variant="icon">
               <Icon
                 id="Heart"
-                class="text-critical"
+                class="text-critical dark:text-white"
                 width={20}
                 height={20}
                 strokeWidth={2}

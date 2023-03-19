@@ -15,7 +15,7 @@ function SearchButton() {
       }}
     >
       <Icon
-        class="text-critical"
+        class="text-critical dark:text-white"
         id="MagnifyingGlass"
         width={20}
         height={20}
@@ -37,7 +37,7 @@ function MenuButton() {
       }}
     >
       <Icon
-        class="text-critical"
+        class="text-critical dark:text-white"
         id="Bars3"
         width={20}
         height={20}
@@ -63,7 +63,7 @@ function CartButton() {
       }}
     >
       <Icon
-        class="text-critical"
+        class="text-critical dark:text-white"
         id="ShoppingCart"
         width={20}
         height={20}
