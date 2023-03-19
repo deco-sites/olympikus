@@ -10,11 +10,13 @@ export const useVariantPossibilities = ({ isVariantOf }: Product) => {
 
   const possibilities = allProperties.reduce((acc, { property, url }) => {
     const { name = "", value = "" } = property;
+    const normalizedName = name.toLowerCase();
+    const normalizedValue = value.toLowerCase();
 
     if (url) {
-      acc[name] = {
-        ...acc[name],
-        [url]: value,
+      acc[normalizedName] = {
+        ...acc[normalizedName],
+        [url]: normalizedValue,
       };
     }
 

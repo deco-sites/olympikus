@@ -8,30 +8,57 @@ interface Props {
 }
 
 function VariantSelector({ product }: Props) {
-  const possibilities = useVariantPossibilities(product);
+  const { tamanho } = useVariantPossibilities(product);
   const { url: currentUrl } = product;
 
   return (
     <ul class="flex flex-col gap-4">
-      {Object.keys(possibilities).map((name) => (
-        <li class="flex flex-col gap-2">
-          <Text variant="caption">{name}</Text>
-          <ul class="flex flex-row gap-2">
-            {Object.entries(possibilities[name]).map(([url, value]) => (
-              <li>
-                <a href={url}>
-                  <Avatar
-                    // deno-lint-ignore no-explicit-any
-                    content={value as any}
-                    disabled={url === currentUrl}
-                    variant={name === "COR" ? "color" : "abbreviation"}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
+      <li class="flex flex-col gap-2">
+        <span class="font-logo uppercase text-lg tracking-widest	">
+          3 cores disponíveis
+        </span>
+
+        <ul class="grid grid-cols-10 gap-4">
+          <li>
+            <a href="#">
+              <Avatar content="laranja" variant="color" />
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <Avatar content="cinza-escura" variant="color" />
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <Avatar content="verde-clara" variant="color" />
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="flex flex-col gap-2">
+        <span class="font-logo uppercase text-lg tracking-widest	">
+          Tamanho
+        </span>
+
+        <ul class="grid grid-cols-10 gap-2">
+          {Object.entries(tamanho).map(([url, value]) => (
+            <li>
+              <a href={url}>
+                <Avatar
+                  // deno-lint-ignore no-explicit-any
+                  content={value as any}
+                  variant="abbreviation"
+                  disabled={url === currentUrl}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
     </ul>
   );
 }
