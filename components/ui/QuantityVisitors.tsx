@@ -13,7 +13,8 @@ function QuantityVisitors() {
         />
       </div>
       <p class="w-full text-xs m-2">
-        <span class="text-blue-600">200</span> Pessoas viram esse produto hoje!
+        <span class="text-blue-600 font-bold">200</span>{" "}
+        pessoas viram esse produto hoje!
       </p>
     </div>
   );

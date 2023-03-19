@@ -12,10 +12,7 @@ import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { useId } from "preact/hooks";
-import type {
-  ImageObject,
-  ProductDetailsPage,
-} from "deco-sites/std/commerce/types.ts";
+import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
@@ -181,7 +178,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
             </div>
 
             {/* Visitors */}
-            <div class="w-full">
+            <div class="w-full mt-4">
               <QuantityVisitors />
             </div>
 
@@ -202,6 +199,14 @@ function Details({ page }: { page: ProductDetailsPage }) {
                   sellerId={seller}
                 />
               )}
+            </div>
+
+            {/* Share */}
+            <div class="mt-2">
+              <Button variant="secondary" class="p-2">
+                <Icon id="Facebook" width={16} height={16} strokeWidth={1} />
+                Compartilhar
+              </Button>
             </div>
           </div>
         </div>
