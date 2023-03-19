@@ -1,7 +1,7 @@
 function QuantitySelector() {
   return (
     <div class="flex border-1 border-default">
-      <select class="bg-gray-200 h-11 w-14">
+      <select class="bg-gray-200 h-8 w-11">
         <option value="1">01</option>
         <option value="2">02</option>
         <option value="3">03</option>
