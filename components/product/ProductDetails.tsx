@@ -151,7 +151,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
 
           {/* Prices */}
           <div class="flex flex-col lg:max-w-[350px] flex-1 w-full">
-            {discount && (
+            {discount > 0 && (
               <p class="line-through text-lg text-default">
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p>
@@ -165,7 +165,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
               {installments}
             </Text>
 
-            {discount && (
+            {discount > 0 && (
               <p class="text-base font-bold text-green-600 mt-1">
                 Economize{" "}
                 {formatPrice(listPrice! - price!, offers!.priceCurrency!)}
