@@ -9,6 +9,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
+import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { useId } from "preact/hooks";
 import type {
   ImageObject,
@@ -46,7 +47,9 @@ function Details({ page }: { page: ProductDetailsPage }) {
   const discount = 100 - Math.round((price! * 100) / listPrice!);
 
   const isDescTruncated = useSignal(description?.length! > 750);
-  const desc = isDescTruncated.value ? "max-h-[350px] overflow-hidden" : "";
+  const desc = isDescTruncated.value
+    ? "max-h-[150px] md:max-h-[350px] overflow-hidden"
+    : "";
 
   const showDescription = () => {
     isDescTruncated.value = false;
@@ -59,9 +62,9 @@ function Details({ page }: { page: ProductDetailsPage }) {
         itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
       />
 
-      <div class="flex flex-row mt-4 items-start">
+      <div class="flex flex-col lg:flex-row mt-4 items-start">
         {/* Product Info */}
-        <div class="flex flex-1 flex-col max-w-[320px]">
+        <div class="flex flex-1 flex-col lg:max-w-[350px] w-full mb-12 lg:mb-0">
           <h1 class="font-logo text-4xl text-critical uppercase">
             {name}
           </h1>
@@ -83,96 +86,117 @@ function Details({ page }: { page: ProductDetailsPage }) {
               onClick={showDescription}
               class="block mt-2 font-bold text-sm cursor-pointer underline"
             >
-              Ver mais {isDescTruncated.value}
+              Ver mais
             </p>
           )}
         </div>
 
-        {/* Image Gallery */}
-        <div
-          id={sliderId}
-          class="flex flex-1 flex-col items-center justify-center relative mx-12"
-        >
-          {discount > 0 && (
-            <span class="absolute z-10 bg-interactive text-default-inverse uppercase font-logo py-1 px-3 top-0 left-0">
-              {discount}% OFF
-            </span>
-          )}
+        <div class="flex flex-col md:flex-row flex-1 w-full">
+          {/* Image Gallery */}
+          <div
+            id={sliderId}
+            class="flex flex-1 flex-col items-center justify-center relative lg:ml-12 md:mr-12 mb-12 md:mb-0"
+          >
+            {discount > 0 && (
+              <span class="absolute z-10 bg-interactive text-default-inverse uppercase font-logo py-1 px-3 top-0 left-0">
+                {discount}% OFF
+              </span>
+            )}
 
-          <Slider class="scrollbar-none w-[450px]">
-            {images?.map((image, index) => (
-              <div class="relative w-[450px] overflow-y-hidden">
-                <Picture class="w-full" preload={index === 0}>
-                  <Source
-                    src={image.url!}
-                    width={450}
-                    height={450}
-                    fetchPriority={index === 0 ? "high" : "auto"}
-                  />
-                  <img
-                    src={image.url!}
-                    alt={image.alternateName}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    class="object-cover w-full sm:h-full"
-                  />
-                </Picture>
-              </div>
-            ))}
-          </Slider>
+            <Slider class="scrollbar-none md:w-[450px] w-[100vw]">
+              {images?.map((image, index) => (
+                <div class="relative w-[100vw] md:w-[450px] overflow-y-hidden px-4 md:px-0">
+                  <Picture class="w-full" preload={index === 0}>
+                    <Source
+                      src={image.url!}
+                      width={450}
+                      height={450}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                    />
+                    <img
+                      src={image.url!}
+                      alt={image.alternateName}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      class="object-cover w-full sm:h-full"
+                    />
+                  </Picture>
+                </div>
+              ))}
+            </Slider>
 
-          <ol class="hidden sm:flex flex-row gap-4 mt-4">
-            {images?.map((img, index) => (
-              <li class="h-full">
-                <button
-                  data-dot={index}
-                  aria-label={`go to slider item ${index}`}
-                  class="h-full rounded focus:outline-none group border-1 border-gray-100 p-1 disabled:border-critical"
-                >
-                  <Image
-                    width={60}
-                    height={60}
-                    preload={true}
-                    src={img.url!}
-                    loading={"eager"}
-                    alt={img.alternateName}
-                    class="w-[60px] h-[60px]"
-                    sizes="(max-width: 640px) 10vw"
-                    style={{ aspectRatio: "1000 / 1000" }}
-                  />
-                </button>
-              </li>
-            ))}
-          </ol>
+            <ol class="hidden sm:flex flex-row gap-4 mt-4">
+              {images?.map((img, index) => (
+                <li class="h-full">
+                  <button
+                    data-dot={index}
+                    aria-label={`go to slider item ${index}`}
+                    class="h-full rounded focus:outline-none group border-1 border-gray-100 p-1 disabled:border-critical"
+                  >
+                    <Image
+                      width={60}
+                      height={60}
+                      preload={true}
+                      src={img.url!}
+                      loading={"eager"}
+                      alt={img.alternateName}
+                      class="w-[60px] h-[60px]"
+                      sizes="(max-width: 640px) 10vw"
+                      style={{ aspectRatio: "1000 / 1000" }}
+                    />
+                  </button>
+                </li>
+              ))}
+            </ol>
 
-          <SliderControllerJS rootId={sliderId} />
-        </div>
+            <SliderControllerJS rootId={sliderId} />
+          </div>
 
-        {/* Prices */}
-        <div class="flex flex-1 flex-col max-w-[450px]">
-          {discount && (
-            <p class="line-through text-lg text-default">
-              {formatPrice(listPrice, offers!.priceCurrency!)}
+          {/* Prices */}
+          <div class="flex flex-col lg:max-w-[350px] flex-1 w-full">
+            {discount && (
+              <p class="line-through text-lg text-default">
+                {formatPrice(listPrice, offers!.priceCurrency!)}
+              </p>
+            )}
+
+            <p class="text-6xl text-default font-logo uppercase">
+              {formatPrice(price, offers!.priceCurrency!)}
             </p>
-          )}
 
-          <p class="text-6xl text-default font-logo uppercase">
-            {formatPrice(price, offers!.priceCurrency!)}
-          </p>
+            <Text class="mt-4" tone="subdued" variant="caption">
+              {installments}
+            </Text>
 
-          <Text class="mt-4" tone="subdued" variant="caption">
-            {installments}
-          </Text>
+            {discount && (
+              <p class="text-base font-bold text-green-600 mt-1">
+                Economize{" "}
+                {formatPrice(listPrice! - price!, offers!.priceCurrency!)}
+              </p>
+            )}
 
-          {discount && (
-            <p class="text-base font-bold text-green-600 mt-1">
-              Economize{" "}
-              {formatPrice(listPrice! - price!, offers!.priceCurrency!)}
-            </p>
-          )}
+            {/* Sku Selector */}
+            <div class="mt-4 sm:mt-6">
+              <ProductSelector product={product} />
+            </div>
 
-          {/* Sku Selector */}
-          <div class="mt-4 sm:mt-6">
-            <ProductSelector product={product} />
+            {/* Qty */}
+            <div class="mt-12 max-w-min flex flex-row gap-1 items-center justify-center">
+              <span class="font-logo uppercase text-base tracking-widest	">
+                Quantidade:
+              </span>
+
+              <QuantitySelector quantity={1} />
+            </div>
+
+            {/* Add to Cart */}
+            <div class="mt-2">
+              {seller && (
+                <AddToCartButton
+                  skuId={productID}
+                  sellerId={seller}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>

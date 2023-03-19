@@ -18,7 +18,7 @@ function VariantSelector({ product }: Props) {
           3 cores disponíveis
         </span>
 
-        <ul class="grid grid-cols-10 gap-4">
+        <ul class="grid grid-cols-6 gap-2">
           <li>
             <a href="#">
               <Avatar content="laranja" variant="color" />
@@ -44,7 +44,7 @@ function VariantSelector({ product }: Props) {
           Tamanho
         </span>
 
-        <ul class="grid grid-cols-10 gap-2">
+        <ul class="grid lg:grid-cols-6 grid-cols-8 gap-2">
           {Object.entries(tamanho).map(([url, value]) => (
             <li>
               <a href={url}>
