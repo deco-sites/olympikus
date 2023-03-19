@@ -45,7 +45,7 @@ function NavItem({ item }: { item: INavItem }) {
                   <Text
                     variant="bold"
                     tone={node.color}
-                    class="uppercase text-sm dark:text-critical"
+                    class="uppercase text-sm dark:text-white"
                   >
                     {node.title}
                   </Text>

@@ -25,14 +25,14 @@ function Gallery({ page }: { page: ProductListingPage }) {
     <div class="mt-[64px]">
       <Container class="px-4 sm:py-10">
         {query && (
-          <h2 class="text-4xl uppercase text-critical font-logo mb-4">
+          <h2 class="text-4xl uppercase text-critical dark:text-white font-logo mb-4">
             {query}
           </h2>
         )}
 
-        <div class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0.5 bg-gray-100 items-center">
+        <div class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0.5 bg-gray-100 dark:bg-gray-600 items-center">
           {page.products?.map((product, index) => (
-            <div class="p-3 w-full flex h-full bg-default">
+            <div class="p-3 w-full flex h-full bg-default dark:bg-black">
               <ProductCard
                 hideCta={true}
                 product={product}
@@ -42,17 +42,25 @@ function Gallery({ page }: { page: ProductListingPage }) {
           ))}
         </div>
 
-        <div class="flex flex-row items-center justify-center gap-2 my-4">
+        <div class="flex flex-row items-center justify-center gap-2 mt-8 mb-4">
           <a rel="prev" href={`/s?${page.pageInfo.previousPage}`}>
-            <Button disabled={!page.pageInfo.previousPage} variant="icon">
+            <Button
+              class="dark:bg-white"
+              disabled={!page.pageInfo.previousPage}
+              variant="icon"
+            >
               <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
             </Button>
           </a>
-          <Text variant="caption">
+          <Text variant="caption" class="text-default dark:text-white">
             {page.pageInfo.currentPage + 1}
           </Text>
           <a rel="next" href={`/s?${page.pageInfo.nextPage}`}>
-            <Button disabled={!page.pageInfo.nextPage} variant="icon">
+            <Button
+              class="dark:bg-white"
+              disabled={!page.pageInfo.nextPage}
+              variant="icon"
+            >
               <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
             </Button>
           </a>

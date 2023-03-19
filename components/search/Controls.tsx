@@ -20,7 +20,7 @@ function Controls({ page }: { page: ProductListingPage }) {
   const filters = page?.filters;
 
   return (
-    <div class="border-b-1 fixed w-full z-20 bg-gray-100 flex items-center justify-center">
+    <div class="border-b-1 fixed w-full z-20 bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
       <div class="flex flex-row gap-1 px-2 items-center justify-end max-w-[1408px] w-full">
         <Button variant="tertiary" onClick={() => (open.value = true)}>
           Filtrar

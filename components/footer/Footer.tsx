@@ -32,7 +32,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
       <div class="dark:bg-default-bf dark:text-white bg-gray-200 flex flex-col items-center justify-center">
         <div class="flex flex-col lg:flex-row lg:gap-20 gap-0 content-between w-full max-w-[1408px]">
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-badge font-extrabold text-sm mb-4">
+            <h1 class="text-badge font-extrabold text-sm dark:text-gray-400 mb-2">
               INSTITUCIONAL
             </h1>
             <ul>
@@ -47,7 +47,9 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-badge font-extrabold text-sm mb-4">AJUDA</h1>
+            <h1 class="text-badge font-extrabold text-sm mb-2 dark:text-gray-400">
+              AJUDA
+            </h1>
             <ul>
               {help.children.map((item) => (
                 <li key={item.label}>
@@ -60,7 +62,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-8 m-4">
-            <h1 class="text-badge font-extrabold text-sm mb-4">
+            <h1 class="text-badge font-extrabold text-sm mb-2 dark:text-gray-400">
               SOBRE A LOJA ONLINE
             </h1>
             <ul>
@@ -86,7 +88,9 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
 
           <div class="flex flex-col lg:m-3 m-4">
-            <h1 class="text-badge font-extrabold mt-5 text-sm">PAGUE COM</h1>
+            <h1 class="text-badge font-extrabold mt-5 text-sm dark:text-gray-400">
+              PAGUE COM
+            </h1>
             <div class="flex flex-row gap-4 mt-2">
               <Icon
                 id={"Elo"}
@@ -116,7 +120,7 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
         </div>
 
-        <div class="hidden md:flex py-12 bg-gray-100 dark:bg-default-bf flex-col items-center justify-center w-full p-3">
+        <div class="hidden md:flex py-12 bg-gray-100 dark:bg-default-bf flex-col items-center justify-center w-full">
           <div class="flex flex-col items-center justify-center w-full max-w-[1408px] gap-1">
             <ul class="text-center text-xs text-gray-400">
               <li>{copyright.line1}</li>

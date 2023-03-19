@@ -18,7 +18,7 @@ const variants = {
   secondary:
     "p-4 rounded bg-transparent font-button text-critical dark:text-white focus:outline-none text-xs uppercase border-critical dark:border-white border-2",
   tertiary:
-    "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-transparent hover:bg-hover active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
+    "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-transparent hover:bg-hover dark:hover:bg-interactive-inverse active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
   icon:
     "h-[36px] px-2 rounded-full bg-transparent text-default border-transparent hover:bg-hover active:border-interactive disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
 };
