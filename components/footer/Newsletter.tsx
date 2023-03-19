@@ -16,7 +16,8 @@ function Newsletter() {
         <Text
           variant="heading-3"
           tone="default-inverse"
-          class="text-xs text-gray-600 text-left"
+          class="text-gray-600 text-left"
+          style="font-size: 0.75rem"
         >
           Inscreva-se em nossa newsletter para receber ofertas e novidades
           exclusivas sobre os produtos Olympikus.
