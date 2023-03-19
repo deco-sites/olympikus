@@ -35,10 +35,10 @@ function ProductShelf({
 
       <Slider
         class="gap-6 col-span-full row-start-2 row-end-5 overflow-hidden"
-        snap="snap-center lg:snap-start block first:ml-6 lg:first:ml-0 last:mr-6 lg:last:mr-0"
+        snap="snap-center lg:snap-start block first:ml-6 lg:first:ml-0 last:mr-6 lg:last:mr-0 flex h-full"
       >
         {products?.map((product) => (
-          <div class="min-w-[228px] max-w-[228px]">
+          <div class="min-w-[228px] max-w-[228px] w-full flex h-full bg-default">
             <ProductCard product={product} />
           </div>
         ))}

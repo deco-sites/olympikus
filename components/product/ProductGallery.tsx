@@ -19,32 +19,46 @@ function NotFound() {
 }
 
 function Gallery({ page }: { page: ProductListingPage }) {
-  return (
-    <Container class="px-4 sm:py-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
-        {page.products?.map((product, index) => (
-          <div class="w-full list-none">
-            <ProductCard product={product} preload={index === 0} />
-          </div>
-        ))}
-      </div>
+  const query = getQuery();
 
-      <div class="flex flex-row items-center justify-center gap-2 my-4">
-        <a rel="prev" href={page.pageInfo.previousPage ?? "#"}>
-          <Button disabled={!page.pageInfo.previousPage} variant="icon">
-            <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
-          </Button>
-        </a>
-        <Text variant="caption">
-          {page.pageInfo.currentPage + 1}
-        </Text>
-        <a rel="next" href={page.pageInfo.nextPage ?? "#"}>
-          <Button disabled={!page.pageInfo.nextPage} variant="icon">
-            <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
-          </Button>
-        </a>
-      </div>
-    </Container>
+  return (
+    <div class="mt-[64px]">
+      <Container class="px-4 sm:py-10">
+        {query && (
+          <h2 class="text-4xl uppercase text-critical font-logo mb-4">
+            {query}
+          </h2>
+        )}
+
+        <div class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0.5 bg-gray-100 items-center">
+          {page.products?.map((product, index) => (
+            <div class="p-3 w-full flex h-full bg-default">
+              <ProductCard
+                hideCta={true}
+                product={product}
+                preload={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div class="flex flex-row items-center justify-center gap-2 my-4">
+          <a rel="prev" href={`/s?${page.pageInfo.previousPage}`}>
+            <Button disabled={!page.pageInfo.previousPage} variant="icon">
+              <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
+            </Button>
+          </a>
+          <Text variant="caption">
+            {page.pageInfo.currentPage + 1}
+          </Text>
+          <a rel="next" href={`/s?${page.pageInfo.nextPage}`}>
+            <Button disabled={!page.pageInfo.nextPage} variant="icon">
+              <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
+            </Button>
+          </a>
+        </div>
+      </Container>
+    </div>
   );
 }
 
@@ -54,6 +68,17 @@ function ProductGallery({ page }: Props) {
   }
 
   return <Gallery page={page} />;
+}
+
+function getQuery() {
+  try {
+    const url = location?.href ? new URL(location?.href) : undefined;
+    const query = url ? url.searchParams.get("q") : undefined;
+
+    return query;
+  } catch {
+    return undefined;
+  }
 }
 
 export default ProductGallery;

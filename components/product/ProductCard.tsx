@@ -19,9 +19,9 @@ function ProductCard({ product, preload, hideCta }: Props) {
   const discount = 100 - Math.round((price! * 100) / listPrice!);
 
   return (
-    <div id={`product-card-${productID}`} class="w-full flex-1 flex">
-      <a href={url} aria-label="product link">
-        <div class="relative w-full h-[208px] overflow-hidden">
+    <div id={`product-card-${productID}`} class="w-full flex h-full bg-default">
+      <a href={url} aria-label="product link" class="flex flex-col flex-1">
+        <div class="relative w-full overflow-hidden">
           {discount > 0 && (
             <span class="absolute z-10 bg-interactive text-default-inverse uppercase font-logo py-1 px-3">
               {discount}% OFF
@@ -40,12 +40,12 @@ function ProductCard({ product, preload, hideCta }: Props) {
           />
         </div>
 
-        <div class="flex flex-col gap-1 py-2">
-          <span class="overflow-hidden overflow-ellipsis whitespace-nowrap font-bold text-sm w-[228px]">
+        <div class="flex flex-col gap-1 py-2 flex-1">
+          <span class="font-bold text-sm">
             {name}
           </span>
 
-          <div class="flex flex-col">
+          <div class="flex flex-col mt-auto">
             <Text
               class="line-through min-h-[20px]"
               variant="list-price"
