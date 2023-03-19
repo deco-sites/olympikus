@@ -1,3 +1,4 @@
+import { useSignal } from "@preact/signals";
 import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
@@ -7,12 +8,31 @@ interface Props {
 }
 
 export default function HeaderSearch({ searchbar }: Props) {
+  const input = useSignal("");
+
+  // deno-lint-ignore no-explicit-any
+  const onChange = (e: any) => {
+    input.value = e.target.value;
+  };
+
+  // navigate
+  const go = () => {
+    window.location.href = "/s?q=" + input;
+  };
+
+  // deno-lint-ignore no-explicit-any
+  const handleEnter = (e: any) => {
+    if (e.key === "Enter") go();
+  };
+
   return (
     <div class="flex flex-row w-full items-center bg-gray-200 dark:bg-gray-700 lg:w-auto dark:lg:bg-transparent lg:bg-transparent lg:border-b-2 lg:border-critical dark:lg:border-white p-2 lg:p-0 lg:pb-1 relative group">
       <input
         role="combobox"
         id="search-input"
         autocomplete="off"
+        onChange={onChange}
+        onKeyPress={handleEnter}
         aria-controls="search-suggestion"
         placeholder={searchbar.placeholder}
         class="flex-grow outline-none bg-transparent font-bold uppercase text-[10px] text-critical dark:text-white placeholder-critical dark:placeholder-white w-[180px]"
@@ -21,9 +41,10 @@ export default function HeaderSearch({ searchbar }: Props) {
       <Icon
         width={16}
         height={16}
+        onClick={go}
         strokeWidth={0.4}
         id="MagnifyingGlass"
-        class="text-critical dark:text-white"
+        class="text-critical dark:text-white cursor-pointer"
       />
 
       {searchbar.suggestions?.searches && (
