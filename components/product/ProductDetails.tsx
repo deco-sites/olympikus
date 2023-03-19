@@ -5,6 +5,7 @@ import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Button from "$store/components/ui/Button.tsx";
+import QuantityVisitors from "$store/components/ui/QuantityVisitors.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
@@ -177,6 +178,11 @@ function Details({ page }: { page: ProductDetailsPage }) {
             {/* Sku Selector */}
             <div class="mt-4 sm:mt-6">
               <ProductSelector product={product} />
+            </div>
+
+            {/* Visitors */}
+            <div class="w-full">
+              <QuantityVisitors />
             </div>
 
             {/* Qty */}
