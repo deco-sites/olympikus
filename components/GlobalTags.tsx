@@ -61,22 +61,11 @@ function GlobalTags() {
           @font-face {
             font-family: "FK Olympikus Upright";
             src: url(${
-            asset("/fonts/FKOlympikus-Upright.eot.css")
-          }) format("embedded-opentype"),
-              url(${
             asset("/fonts/FKOlympikus-Upright.woff2.css")
-          }) format("woff2"),
-              url(${
-            asset("/fonts/FKOlympikus-Upright.woff.css")
-          }) format("woff"),
-              url(${
-            asset("/fonts/FKOlympikus-Upright.ttf.css")
-          }) format("truetype"),
-              url(${
-            asset("/fonts/FKOlympikus-Upright.svg.css#FKOlympikus-Upright")
-          }) format("svg");
-            font-weight:normal;
-            font-style:normal;
+          }) format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
           }
       `,
         }}
