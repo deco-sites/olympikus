@@ -7,7 +7,7 @@ export interface INavItem {
   label: string;
   color: LinkColor;
 
-  subcategories: Array<{
+  subcategories?: Array<{
     title: string;
     color: LinkColor;
 
