@@ -1,6 +1,5 @@
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Container from "$store/components/ui/Container.tsx";
-import Text from "$store/components/ui/Text.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import Button from "$store/components/ui/Button.tsx";
@@ -28,10 +27,10 @@ function ProductShelf({
   return (
     <Container
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0"
+      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 gap-4"
     >
-      <h2 class="text-center row-start-1 col-span-full">
-        <Text variant="heading-2">{title}</Text>
+      <h2 class="text-center row-start-1 col-span-full text-4xl uppercase text-critical font-logo">
+        {title}
       </h2>
 
       <Slider
@@ -39,7 +38,7 @@ function ProductShelf({
         snap="snap-center lg:snap-start block first:ml-6 lg:first:ml-0 last:mr-6 lg:last:mr-0"
       >
         {products?.map((product) => (
-          <div class="min-w-[270px] max-w-[270px] lg:min-w-[292px] lg:max-w-[292px]">
+          <div class="min-w-[228px] max-w-[228px]">
             <ProductCard product={product} />
           </div>
         ))}
