@@ -7,7 +7,7 @@ export interface INavItem {
   label: string;
   color: LinkColor;
 
-  subcategories: Array<{
+  subcategories?: Array<{
     title: string;
     color: LinkColor;
 
@@ -25,7 +25,10 @@ function NavItem({ item }: { item: INavItem }) {
   return (
     <li class="group flex items-center">
       <a href={href} class="px-4 py-3">
-        <Text class="font-logo uppercase text-2xl">
+        <Text
+          class="font-logo uppercase text-2xl"
+          tone={item.color}
+        >
           {label}
         </Text>
       </a>
