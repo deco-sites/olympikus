@@ -215,7 +215,7 @@ function DesignSystem() {
 
       <DesignSystemItem title="QuantitySelector">
         <div class="w-min">
-          <QuantitySelector quantity={10} />
+          <QuantitySelector />
         </div>
       </DesignSystemItem>
     </ul>

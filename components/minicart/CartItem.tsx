@@ -50,12 +50,7 @@ function CartItem({ index }: Props) {
           </Text>
         </div>
         <div class="mt-6 max-w-min">
-          <QuantitySelector
-            disabled={loading.value || isGift}
-            quantity={quantity}
-            onChange={(quantity) =>
-              updateItems({ orderItems: [{ index, quantity }] })}
-          />
+          <QuantitySelector />
         </div>
       </div>
       <Button
