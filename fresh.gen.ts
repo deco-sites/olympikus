@@ -690,7 +690,6 @@ const manifest: DecoManifest = {
                 "href",
                 "label",
                 "color",
-                "subcategories",
               ],
             },
             "title": "Navigation items",
