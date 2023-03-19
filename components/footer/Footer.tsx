@@ -113,8 +113,8 @@ function Footer({ institutional, help, about, copyright }: Props) {
         </div>
 
         <div class="bg-gray-100 dark:bg-default-bf flex flex-col items-center justify-center w-full p-3">
-          <div class="bg-gray-100 flex dark:bg-default-bf flex-col items-center justify-center w-full max-w-[1408px] gap-3">
-            <ul class="text-center text-sm leading-loose">
+          <div class="bg-gray-100 flex dark:bg-default-bf flex-col items-center justify-center w-full max-w-[1408px] gap-1">
+            <ul class="text-center text-sm leading-loose text-gray-400">
               <li>{copyright.line1}</li>
               <li>{copyright.line2}</li>
               <li>{copyright.line3}</li>
