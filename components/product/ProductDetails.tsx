@@ -185,7 +185,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 Quantidade:
               </span>
 
-              <QuantitySelector quantity={1} />
+              <QuantitySelector />
             </div>
 
             {/* Add to Cart */}

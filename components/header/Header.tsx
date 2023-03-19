@@ -50,7 +50,7 @@ function Header(
 
   return (
     <header class={`h-[${mobileHeaderHeight}] lg:h-[${headerHeight}]`}>
-      <div class="bg-default fixed w-full z-50">
+      <div class="bg-default dark:bg-default-bf fixed w-full z-50">
         <Alert alerts={alerts} />
         <Navbar items={navItems} searchbar={searchbar} />
       </div>
