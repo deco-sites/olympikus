@@ -1,4 +1,4 @@
-import { headerHeight } from "./constants.ts";
+import { headerHeight, mobileHeaderHeight } from "./constants.ts";
 import Text from "$store/components/ui/Text.tsx";
 export type LinkColor = "default" | "positive" | "critical";
 
@@ -33,7 +33,7 @@ function NavItem({ item }: { item: INavItem }) {
       {subcategories && subcategories.length > 0 &&
         (
           <div
-            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
+            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen lg:mt-[${headerHeight}] mt-[${mobileHeaderHeight}]`}
             style={{ top: "0px", left: "0px" }}
           >
             <ul class="flex items-start justify-center gap-6">
