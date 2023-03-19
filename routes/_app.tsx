@@ -16,8 +16,10 @@ function App(props: AppProps) {
         <GoogleTagManager trackingId={trackingId} />
       )}
 
-      {/* Rest of Preact tree */}
-      <props.Component />
+      <main class="bg-default dark:bg-black">
+        {/* Rest of Preact tree */}
+        <props.Component />
+      </main>
     </>
   );
 }
