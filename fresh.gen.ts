@@ -784,12 +784,12 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Products",
           },
-          "itemsPerPage": {
+          "validUntil": {
             "type": [
-              "number",
+              "string",
               "null",
             ],
-            "title": "Items Per Page",
+            "title": "Valid Until",
           },
         },
         "required": [
