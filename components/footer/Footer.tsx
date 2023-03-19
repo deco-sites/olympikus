@@ -25,11 +25,11 @@ export interface Props {
 function Footer({ institutional, help, about, copyright }: Props) {
   return (
     <footer class="w-full flex flex-col divide-y-1 divide-default">
-      <div class="bg-gray-300 flex flex-col justify-items-center">
+      <div class="bg-gray-300 dark:bg-default-bf dark:text-white flex flex-col justify-items-center">
         <Newsletter />
       </div>
 
-      <div class="bg-gray-200 flex flex-col items-center justify-center">
+      <div class="dark:bg-default-bf dark:text-white bg-gray-200 flex flex-col items-center justify-center">
         <div class="flex flex-col lg:flex-row lg:gap-20 gap-0 content-between w-full max-w-[1408px]">
           <div class="flex flex-col lg:m-8 m-4">
             <h1 class="text-blue-700 font-extrabold text-sm">INSTITUCIONAL</h1>
@@ -112,8 +112,8 @@ function Footer({ institutional, help, about, copyright }: Props) {
           </div>
         </div>
 
-        <div class="bg-gray-100 flex flex-col items-center justify-center w-full p-3">
-          <div class="bg-gray-100 flex flex-col items-center justify-center w-full max-w-[1408px] gap-3">
+        <div class="bg-gray-100 dark:bg-default-bf flex flex-col items-center justify-center w-full p-3">
+          <div class="bg-gray-100 flex dark:bg-default-bf flex-col items-center justify-center w-full max-w-[1408px] gap-3">
             <ul class="text-center text-sm leading-loose">
               <li>{copyright.line1}</li>
               <li>{copyright.line2}</li>

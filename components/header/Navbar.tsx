@@ -14,7 +14,7 @@ function Navbar({ items, searchbar }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="lg:hidden flex flex-col justify-center border-b-1 border-default w-full">
+      <div class="lg:hidden flex flex-col justify-center dark:bg-default-bf border-b-1 border-default w-full">
         <div class="flex flex-row justify-between items-center w-full">
           <HeaderButton variant="menu" />
 
